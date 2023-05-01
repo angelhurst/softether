@@ -7,6 +7,7 @@ def parsing(commad):
 
     table = subprocess.check_output(commad, shell=True)
     table = table.decode('utf-8')
+    print(table)
 
     item = table.split('\n------------+--------------------\n')
 
