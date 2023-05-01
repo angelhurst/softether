@@ -97,12 +97,9 @@ class ListDevice(APIView):
 
             for ip in table_ip:
 
-                id_ip= ip['Session Name'].split('-')[len(ip['Session Name'].split('-'))-1]
-
-                if dhcp['ID'] == id_ip:
+                if dhcp['IP Address'] == ip['IP Address'].split(' ')[0]:
                     device.append({
                         'status':'online',
-                        'id':dhcp['ID'],
                         'user':ip['Session Name'].split('-')[1],
                         'session_name': ip['Session Name'],
                         'client_host': dhcp['Client Host Name'],
@@ -117,7 +114,6 @@ class ListDevice(APIView):
             if session is not True:
                 device.append({
                     'status':'offline',
-                    'id':dhcp['ID'],
                     'user':'',
                     'session_name':'',
                     'client_host': dhcp['Client Host Name'],
