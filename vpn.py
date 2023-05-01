@@ -1,10 +1,9 @@
-import sudo
 import subprocess
 from os import system
 import json
 
 consulta  = "/usr/local/vpnserver/vpncmd /SERVER localhost:5555 /PASSWORD:holara2023 /HUB:myhub /CMD iptable"
-table_ip = sudo.subprocess.check_output(consulta, shell=True)
+table_ip = subprocess.check_output(consulta, shell=True)
 table_ip = table_ip.decode('utf-8')
 
 # table_ip = """IpTable command - Get the IP Address Table Database
