@@ -7,7 +7,6 @@ def parsing(commad):
 
     table = subprocess.check_output(commad, shell=True)
     table = table.decode('utf-8')
-    print(table)
 
 #     table="""IpTable command - Get the IP Address Table Database
 # Item        |Value
