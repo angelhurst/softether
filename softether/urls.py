@@ -24,7 +24,7 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',Home.as_view()),
+    path('',Home.as_view()),
     path('api/device/',ListDevice.as_view())
 ] 
 
