@@ -53,7 +53,7 @@ class ListDevice(APIView):
 
             for ip in table_ip:
 
-                if dhcp.get['Allocated IP'] == ip['IP Address'].split(' ')[0]:
+                if dhcp['Allocated IP'] == ip['IP Address'].split(' ')[0]:
                     device.append({
                         'status':'online',
                         'user':ip['Session Name'].split('-')[1],
