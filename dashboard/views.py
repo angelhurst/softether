@@ -43,8 +43,8 @@ class ListDevice(APIView):
 
     def get(self, request, format=None):
 
-        table_ip = parsing('/usr/local/vpnserver/vpncmd /SERVER localhost:5555 /PASSWORD:{} /HUB:{}} /CMD iptable'.format(settings.VPN_PASS,settings.HUB))
-        table_dhcp = parsing('/usr/local/vpnserver/vpncmd /SERVER localhost:5555 /PASSWORD:{} /HUB:{}} /CMD dhcptable'.format(settings.VPN_PASS,settings.HUB))
+        table_ip = parsing('/usr/local/vpnserver/vpncmd /SERVER localhost:5555 /PASSWORD:{} /HUB:{} /CMD iptable'.format(settings.VPN_PASS,settings.HUB))
+        table_dhcp = parsing('/usr/local/vpnserver/vpncmd /SERVER localhost:5555 /PASSWORD:{} /HUB:{} /CMD dhcptable'.format(settings.VPN_PASS,settings.HUB))
 
         device=[]
         for dhcp in table_dhcp:
@@ -87,3 +87,4 @@ class Home(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name,self.initial)
+
