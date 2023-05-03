@@ -35,7 +35,8 @@ def parsing(commad,):
             if index_key.find('|') != -1:
                 session_keys[index_key.split('|')[0].strip()]= index_key.split('|')[1].strip()
         
-        data.append(session_keys)
+        if session_keys != {}:
+            data.append(session_keys)
 
     print(data)
     print('angel')
