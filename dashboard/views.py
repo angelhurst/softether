@@ -17,6 +17,8 @@ def parsing(commad,):
     table = subprocess.check_output(commad, shell=True)
     table = table.decode('utf-8')
 
+    print(table)
+
     separtor = ""
     for row in table.split('\n'):
         if row.find('-+-') != -1:
