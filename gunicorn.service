@@ -1,12 +1,17 @@
 [Unit]
-Description=Gunicorn instance to serve myproject
+Description=gunicorn daemon
+Requires=gunicorn.socket
 After=network.target
 
 [Service]
-User=yourusername
+User=ubuntu
 Group=www-data
-WorkingDirectory=/path/to/your/project
-ExecStart=/path/to/venv/bin/gunicorn --config /path/to/your/project/gunicorn_config.py myproject.wsgi:application
+WorkingDirectory=/home/ubuntu/softether
+ExecStart=/home/ubuntu/softether/.venv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --bind unix:/run/gunicorn.sock \
+          softether.wsgi:application
 
 [Install]
 WantedBy=multi-user.target
