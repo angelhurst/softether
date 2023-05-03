@@ -5,10 +5,10 @@ sudo apt update
 sudo apt install python3-venv python3-dev libpq-dev nginx
 ```
 
-# Clonar repositorio 
+## Clonar repositorio 
+```bash
 git clone https://github.com/angelhurst/softether.git
 
-```bash
 cd sofsoftether
 
 python3 -m venv .venv
@@ -20,7 +20,7 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-# Gunicorn
+## Gunicorn
 
 ```bash
 # crear socket 
