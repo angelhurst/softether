@@ -130,7 +130,3 @@ STATICFILES_FINDERS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-# Vpn Config
-VPN_PASS = 'holara2023'
-HUB = 'myhub'
