@@ -69,3 +69,5 @@ for dhcp in table_dhcp:
         })
 
 print(device)
+
+#  sudo `which python` manage.py runserver 172.26.10.68:8000
