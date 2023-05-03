@@ -37,6 +37,8 @@ def parsing(commad,):
         
         data.append(session_keys)
 
+    print(data)
+    print('angel')
     return(data)
 
 class ListDevice(APIView):
@@ -55,7 +57,7 @@ class ListDevice(APIView):
 
             for ip in table_ip:
 
-                if dhcp['Allocated IP'] == ip['IP Address'].split(' ')[0]:
+                if dhcp.get['Allocated IP'] == ip['IP Address'].split(' ')[0]:
                     device.append({
                         'status':'online',
                         'user':ip['Session Name'].split('-')[1],
