@@ -2,7 +2,7 @@
 
 ```bash
 sudo apt update
-sudo apt install python3-venv python3-dev libpq-dev nginx
+sudo apt install python3-venv python3-dev libpq-dev nginx git-all
 ```
 
 ## Clonar repositorio 
