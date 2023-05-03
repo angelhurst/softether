@@ -17,13 +17,10 @@ def parsing(commad,):
     table = subprocess.check_output(commad, shell=True)
     table = table.decode('utf-8')
 
-    print(table)
-
     separtor = ""
     for row in table.split('\n'):
         if row.find('-+-') != -1:
             separtor = row
-
 
     item = table.split(separtor)
 
@@ -38,8 +35,6 @@ def parsing(commad,):
         if session_keys != {}:
             data.append(session_keys)
 
-    print(data)
-    print('angel')
     return(data)
 
 class ListDevice(APIView):
