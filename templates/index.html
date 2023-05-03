@@ -24,8 +24,12 @@
 function listDevice(){
     console.log('search')
     fetch('/api/device/')
-    .then(responde =>responde.json())
+    .then(responce =>responce.json())
     .then(data =>{ 
+
+        data = data.sort(
+        (firstPaddockManager, secondPaddockManager) => firstPaddockManager.status.localeCompare(secondPaddockManager.status)
+        );
         
         card= data.map(device =>{
            
