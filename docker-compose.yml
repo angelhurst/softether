@@ -1,0 +1,27 @@
+version: "3"
+
+services:
+  app:
+    image: softether:2
+    # volumes:
+      # - ./vpn_server.config:/usr/vpnserver/vpn_server.config
+      # - ./secure_vpn_web_server.py:/home/secure_vpn_web_server.py
+    command: python3
+    ports:
+      - 500:500/udp
+      - 4500:4500/udp
+      - 1701:1701/tcp
+      - 1194:1194/udp
+      - 5555:5555/tcp
+      - 8888:8888/tcp
+
+
+ docker run -p 500:500 -p 4500:4500 -p 1701:1701 -p 1194:1194 -p 5555:5555 -p 8888:8888 softether:2
+
+admin holara2023
+user xigma28
+psk 27xondifa
+
+
+
+
